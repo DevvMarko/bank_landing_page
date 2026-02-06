@@ -60,6 +60,8 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
+  z-index: 100;
 }
 
 nav .logo img {
@@ -322,4 +324,41 @@ footer {
   color: var(--grayish-blue);
   font-size: 0.85rem;
   margin-top: 1.5rem;
+}
+
+/* Mobile Menu */
+.noscroll {
+  overflow: hidden;
+}
+
+.mobile-menu {
+  position: absolute;
+  z-index: 60;
+  /* Above header if needed, but user said "after press hamburger open menu". Usually it floats. */
+  top: 5rem;
+  /* ~Header height */
+  left: 1.5rem;
+  right: 1.5rem;
+  background-color: var(--white);
+  padding: 1.5rem;
+  border-radius: 5px;
+  box-shadow: 0 100px 100px rgba(0, 0, 0, 0.4);
+  display: none;
+  /* hidden by default */
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.mobile-menu.open {
+  display: flex;
+}
+
+.mobile-menu a {
+  color: var(--dark-blue);
+  font-size: 1.1rem;
+}
+
+.mobile-menu a:hover {
+  color: var(--lime-green);
 }
